@@ -14,6 +14,7 @@ const checkDB = async () => {
 	try {
 		await sequelize.authenticate();
 		console.log("Db connected");
+		await sequelize.sync();
 	} catch (error) {
 		console.log("Unable to connect to DB ", error);
 	}
