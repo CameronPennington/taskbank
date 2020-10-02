@@ -7,11 +7,10 @@ module.exports = {
 			references: { model: "User", key: "id" },
 			onUpdate: "CASCADE",
 			onDelete: "SET NULL",
-			autoIncrement: true,
 		});
 	},
 
 	down: async (queryInterface, Sequelize) => {
-		await queryInterface.removeColumn("Task", "UserId");
+		await queryInterface.removeColumn("Reward", "UserId");
 	},
 };
