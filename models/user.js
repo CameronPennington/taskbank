@@ -9,6 +9,9 @@ module.exports = (sequelize, DataTypes) => {
 		 */
 		static associate(models) {
 			// define association here
+
+			User.hasMany(models.Task);
+			User.hasMany(models.Reward);
 		}
 	}
 	User.init(
@@ -22,10 +25,6 @@ module.exports = (sequelize, DataTypes) => {
 			modelName: "User",
 		}
 	);
-
-	User.associate = (models) => {
-		User.hasMany(models.Task);
-	};
 
 	return User;
 };
